@@ -8,6 +8,8 @@ public class TextureCycler : MonoBehaviour
     public const int Increment = 0;
     public const int Decrement = 1;
     public const int Slideshow = 2;
+	public const int ScaleHigh = 3;
+	public const int ScaleLow  = 4;
 
     // Public control variables
     public float CycleDelay = 5.0f; 	// The delay, ONLY IF IN SLIDESHOW MODE, between cycling textures
@@ -44,6 +46,10 @@ public class TextureCycler : MonoBehaviour
         }
     }
 
+	public void getBtn(string test){
+		
+	}
+
     public void SetCycleMode(int mode)
     {
         _cycleMode = mode;
@@ -62,6 +68,15 @@ public class TextureCycler : MonoBehaviour
                     StartCoroutine(LoadNextTexture());
                 }
                 break;
+		case ScaleHigh:
+//			gameObject.transform.localScale += new Vector3 (0.2F, 0.2F, 0.2F);
+			transform.localScale += new Vector3 (0.2F, 0.2F, 0.2F);
+			_material.mainTextureScale += new Vector2 (0.2F, 0.2F);
+			break;
+		case ScaleLow:
+			transform.localScale += new Vector3 (0.2F, 0.2F, 0.2F);
+			_material.mainTextureScale -= new Vector2 (0.2F, 0.2F);
+			break;
             default:
                 _cycleMode = Slideshow;
                 _slideStarted = !_slideStarted;
