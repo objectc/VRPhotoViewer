@@ -70,11 +70,12 @@ public class TextureCycler : MonoBehaviour
                 break;
 		case ScaleHigh:
 //			gameObject.transform.localScale += new Vector3 (0.2F, 0.2F, 0.2F);
-			transform.localScale += new Vector3 (0.2F, 0.2F, 0.2F);
+//			transform.localScale += new Vector3 (0.2F, 0.2F, 0.2F);
 			_material.mainTextureScale += new Vector2 (0.2F, 0.2F);
 			break;
 		case ScaleLow:
-			transform.localScale += new Vector3 (0.2F, 0.2F, 0.2F);
+//			transform.localScale += new Vector3 (0.2F, 0.2F, 0.2F);
+//			gameObject.transform.localScale += new Vector3 (0.2F, 0.2F, 0.2F);
 			_material.mainTextureScale -= new Vector2 (0.2F, 0.2F);
 			break;
             default:
